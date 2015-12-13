@@ -30,23 +30,25 @@
                 var arrMatch          = "Arrays are a complete match"
 
                 Array.prototype.diff = function (arr) {
-                var missmatch = [];
+                    var missmatch = [];
 
-                function compareLength () {
-                    return this.length = arr.length
-                };
+                    (function compareLength () {
+                        return this.length = arr.length
+                    })();
 
-                function compareElements () {
-                    for (i = 0; i < arr.length; i++) {
-                        if (this[i] !== arr[i]) {
-                            missmatch.push(this[i] + ' and ' + arr[i] + '/');
-                        }
-                    }
-                };
+                    (function compareElements () {
+                        for (i = 0; i < arr.length; i++) {
+                            if (this[i] !== arr[i]) {
+                                missmatch.push(this[i] + ' and ' + arr[i] + '/');
+                            };
+                        };
+                        return missmatch;
+                    })();
 
-                if (compareLength = false) {alert(differentLength)};
-                else if (missmatch.length != 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
-                else if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
+                    if (compareLength = false) {alert(differentLength)};
+                    else if (missmatch.length != 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
+                    else if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
+                }
 
                 var x;
 
