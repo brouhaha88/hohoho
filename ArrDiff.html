@@ -46,8 +46,8 @@
                     })();
 
                     if (compareLength = false) {alert(differentLength)};
-                    else if (missmatch.length != 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
-                    else if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
+                    if (missmatch.length != 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
+                    if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
                 }
 
                 var x;
