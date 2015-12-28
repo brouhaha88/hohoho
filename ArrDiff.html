@@ -26,31 +26,31 @@
                   [1, 2, 4].diff([1, 2, 2])*/
 
                 var differentLength   = "Arrays are not the same in length";
-                var differentElements = "Array's elements differ...."
-                var arrMatch          = "Arrays are a complete match"
+                var differentElements = "Array's elements differ....";
+                var arrMatch          = "Arrays are a complete match";
 
                 Array.prototype.diff = function (arr) {
                     var missmatch = [];
 
-                    (function compareLength () {
+                    function compareLength () {
                         return this.length = arr.length
-                    })();
+                    };
+                    compareLength.call(this);
 
-                    (function compareElements () {
+                    function compareElements () {
                         for (i = 0; i < arr.length; i++) {
                             if (this[i] !== arr[i]) {
                                 missmatch.push(this[i] + ' and ' + arr[i] + '/');
                             };
                         };
                         return missmatch;
-                    })();
+                    };
+                    compareElements.call(this);
 
-                    if (compareLength = false) {alert(differentLength)};
-                    if (missmatch.length != 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
+                    if (!compareLength) {alert(differentLength)};
+                    if (missmatch.length !== 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
                     if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
-                }
-
-                var x;
+                };
 
                 [1,2,3].diff([5,6,7])
 
