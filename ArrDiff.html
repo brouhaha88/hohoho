@@ -32,11 +32,9 @@
                 Array.prototype.diff = function (arr) {
                     var missmatch = [];
 
-                    function compareLength () {
-                        return this.length = arr.length
+                    if (this.length !== arr.length) {
+                        alert(differentLength)
                     };
-                    compareLength.call(this);
-
                     function compareElements () {
                         for (i = 0; i < arr.length; i++) {
                             if (this[i] !== arr[i]) {
@@ -47,12 +45,16 @@
                     };
                     compareElements.call(this);
 
-                    if (!compareLength) {alert(differentLength)};
-                    if (missmatch.length !== 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
-                    if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
+                    if (missmatch.length > 0) {
+                        alert(differentElements + ' ' + 'Listing differences: ' + missmatch)
+                    };
+
+                    if (this.length == arr.length && missmatch.length == 0) {
+                        alert(arrMatch)
+                    };
                 };
 
-                [1,2,3].diff([5,6,7])
+                [1,2,3].diff([1,2,3,3])
 
             </script>
         </body>
