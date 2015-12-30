@@ -5,9 +5,55 @@
         <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
         <title>ArrDiff</title>
     </head>
+        <body>
+            <script type="text/javascript">
 
-    <body>
+                /*Array.prototype.diff = function(arr) {
+                  if (this.length != arr.length) {
+                    alert("arrays r not da same in length");
+                  }
+                 else if (this.length == arr.length) {
+                    for (i = 0; i < arr.length; i++) {
+                      if (this[i] !== arr[i]) {
+                        errors.push(this[i] && arr[i] + ' ' + 'is a mismatch');
+                      }
+                    }
+                   alert("mismatches found: " + errors);
+                  }
+                }
+                var errors = []
+                var x
+                  [1, 2, 4].diff([1, 2, 2])*/
 
-    </body>
+                var differentLength   = "Arrays are not the same in length";
+                var differentElements = "Array's elements differ....";
+                var arrMatch          = "Arrays are a complete match";
 
+                Array.prototype.diff = function (arr) {
+                    var missmatch = [];
+
+                    function compareLength () {
+                        return this.length = arr.length
+                    };
+                    compareLength.call(this);
+
+                    function compareElements () {
+                        for (i = 0; i < arr.length; i++) {
+                            if (this[i] !== arr[i]) {
+                                missmatch.push(this[i] + ' and ' + arr[i] + '/');
+                            };
+                        };
+                        return missmatch;
+                    };
+                    compareElements.call(this);
+
+                    if (!compareLength) {alert(differentLength)};
+                    if (missmatch.length !== 0) {alert(differentElements + ' ' + 'Listing differences: ' + missmatch)};
+                    if (compareLength == true && missmatch.length == 0) {alert(arrMatch)};
+                };
+
+                [1,2,3].diff([5,6,7])
+
+            </script>
+        </body>
 </html>
