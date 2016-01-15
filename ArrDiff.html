@@ -50,11 +50,13 @@
                     if (mismatch.length > 0) {
                         alert(differentElements + ' ' + 'Listing differences: ' + mismatch)
                     };
+
                     // tell user that arrays are a match
                     if (this.length == arr.length && mismatch.length == 0) {
                         alert(arrMatch)
                     };
                 };
+
                 arr1.diff(arr2);
 
             </script>
