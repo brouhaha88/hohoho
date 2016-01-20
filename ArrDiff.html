@@ -8,18 +8,18 @@
         <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <!-- <script src="scripts/mainScript.js"></script> -->
+        <script src="scripts/mainScript.js"></script>
         <script src="scripts/query.js"></script>
     </head>
         <body>
           <div class="wrapper">
             <div class="container setup-container">
               <h1>Фак мой мозг</h1>
-              <button type="button" name="button" class="setup1">Setup 1st Arr</button>
-              <button type="button" name="button" class="setup2">Setup 2st Arr</button>
+              <button type="button" name="button" class="setup1" onclick="setupFirstArr()">Setup 1st Arr</button>
+              <button type="button" name="button" class="setup2" onclick="setupSecondArr()">Setup 2st Arr</button>
             </div>
             <div class="container compare-container">
-              <button type="button" name="button" class="compareStart">Start Comparison</button>
+              <button type="button" name="button" class="compareStart" onclick="arr1.diff(arr2)">Start Comparison</button>
             </div>
           </div>
         </body>
